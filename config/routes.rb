@@ -1,4 +1,14 @@
 Comicbin::Application.routes.draw do
+  get "comic_books/show"
+
+  get "comic_books/new"
+
+  get "comic_books/create"
+
+  get "comic_books/update"
+
+  get "comic_books/destroy"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

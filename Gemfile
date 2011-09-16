@@ -6,6 +6,19 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', '1.3.3'
+# gem 'oily_png'
+# gem 'free-image'
+
+group :development do
+	gem 'rspec-rails', '2.6.1'
+	gem 'annotate'
+end
+
+group :test do
+	gem 'rspec-rails', '2.6.1'
+	gem 'webrat', '0.7.1'
+	gem 'factory_girl_rails'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
