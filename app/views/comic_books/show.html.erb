@@ -1,8 +1,8 @@
 <h1>Comic Books</h1>
 <table>
 	<th><td>Comic Book Details</td></th>
-	<tr><td>Title</td><td><%= @comicbook.title %></td><td>Issue</td><td><%= @comicbook.issue %></td></tr>
-	<% unless @comicbook.contributors.empty? %>
+	<tr><td>Title</td><td><%= @comic_book.title %></td><td>Issue</td><td><%= @comic_book.issue %></td></tr>
+	<% unless @comic_book.contributors.empty? %>
 		<table class="contributors" summary="Comic book contributors">
 		<%= render @contributors %>
 		</table>

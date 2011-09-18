@@ -31,7 +31,7 @@ RSpec.configure do |config|
   
   def factory_book
     before(:each) do
-      @comicbook = Factory(:comic_book)
+      @comic_book = Factory(:comic_book)
    #   @contributor = Factory(:contributor)
     end
   end  
