@@ -19,5 +19,5 @@
 class ComicBook < ActiveRecord::Base
   validates :title, :issue, :presence => true
 
-  has_many :contributor
+  has_many :contributors
 end

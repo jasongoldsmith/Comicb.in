@@ -11,4 +11,5 @@
 #
 
 class Contributor < ActiveRecord::Base
+  # belongs_to :comic_book
 end

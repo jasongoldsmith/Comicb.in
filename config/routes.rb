@@ -1,4 +1,6 @@
 Comicbin::Application.routes.draw do
+  resources :comic_books
+  
   get "comic_books/show"
 
   get "comic_books/new"

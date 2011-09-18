@@ -1,0 +1,11 @@
+<tr>
+  <td class="role"><%= contributor.role %></td>
+	<td class="contributor"><%= "#{contributor.first_name} #{contributor.last_name}" %></td>
+  <% if false %>
+  <td>
+    <%= link_to "delete", contributor, :method => :delete,
+                                     :confirm => "You sure?",
+                                     :title => contributor.role %>
+  </td>
+  <% end %>
+</tr>
