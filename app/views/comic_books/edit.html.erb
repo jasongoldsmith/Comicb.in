@@ -1,0 +1,8 @@
+<h1>Edit comic book information</h1>
+
+<%= form_for(@comic_book) do |f| %>
+	<%= render 'fields', :f => f %>
+	<div class="actions">
+		<%= f.submit "Update" %>
+	</div>
+<% end %>

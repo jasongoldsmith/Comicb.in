@@ -8,8 +8,9 @@ gem 'rails', '3.0.9'
 gem 'sqlite3', '1.3.3'
 # gem 'oily_png'
 # gem 'free-image'
-gem 'devise'
-# gem 'will_paginate', '3.0.pre2'
+gem 'devise', '1.4.5'
+gem 'will_paginate', '3.0.pre2'
+gem "tabletastic", '0.2.3'
 
 group :development do
 	gem 'rspec-rails', '2.6.1'

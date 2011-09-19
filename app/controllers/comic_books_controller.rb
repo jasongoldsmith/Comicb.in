@@ -22,9 +22,28 @@ class ComicBooksController < ApplicationController
   end
 
   def update
+    @comic_book = ComicBook.find(params[:id])
+    if @comic_book.update_attributes(params[:comic_book])
+      flash[:success] = "Comic book updated."
+      redirect_to @comic_book
+    else
+      @title = "Edit comic book information"
+      render 'edit'
+    end
   end
 
   def destroy
+    ComicBook.find(params[:id]).destroy
+    flash[:success] = "Comic book deleted from database."
+    redirect_to comic_books_path
   end
 
+  def index
+    @comic_books = ComicBook.find(:all)
+  end
+  
+  def edit
+    @comic_book = ComicBook.find(params[:id])
+    @title = "Edit comic book"
+  end
 end

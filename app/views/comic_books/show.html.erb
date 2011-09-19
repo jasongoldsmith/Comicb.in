@@ -3,9 +3,9 @@
 	<th><td>Comic Book Details</td></th>
 	<tr><td>Title</td><td><%= @comic_book.title %></td><td>Issue</td><td><%= @comic_book.issue %></td></tr>
 	<% unless @comic_book.contributors.empty? %>
-		<table class="contributors" summary="Comic book contributors">
+	<table class="contributors" summary="Comic book contributors">
 		<%= render @contributors %>
-		</table>
+	</table>
 
 	<% end %>
 

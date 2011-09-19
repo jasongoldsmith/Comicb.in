@@ -17,10 +17,6 @@ describe ComicBooksController do
       assigns(:comic_book).should == @comic_book 
     end
     
-    it "should have the right title" do
-      get :show, :id => @comic_book
-      response.should have_selector("title", :content => "Comicbin | #{@comic_book.title} #{@comic_book.issue}")
-    end
   end
 
   describe "GET 'new'" do
@@ -83,16 +79,59 @@ describe ComicBooksController do
   end
 
   describe "PUT 'update'" do
-    it "should be successful" do
-      get 'update'
-      response.should be_success
+    before(:each) do
+      @comic_book = Factory(:comic_book)
+    end
+
+    describe "failure" do
+
+      before(:each) do
+        @attr = { :title => "", :issue => nil }
+      end
+
+      it "should display the 'edit' page" do
+        put :update, :id => @comic_book, :comic_book => @attr
+        response.should render_template('edit')
+      end
+    end
+
+    describe "success" do
+
+      before(:each) do
+        @attr = { :title => "Avengers", :issue => 294 }
+      end
+
+      it "should change the comic book's attributes" do
+        put :update, :id => @comic_book, :comic_book => @attr
+        @comic_book.reload
+        @comic_book.title.should  == @attr[:title]
+        @comic_book.issue.should == @attr[:issue]
+      end
+
+      it "should redirect to the comic_book show page" do
+        put :update, :id => @comic_book, :user => @attr
+        response.should redirect_to(comic_book_path(@comic_book))
+      end
+
+      it "should have a flash message" do
+        put :update, :id => @comic_book, :comic_book => @attr
+        flash[:success].should =~ /updated/
+      end
     end
   end
 
   describe "DELETE 'destroy'" do
-    it "should be successful" do
-      get 'destroy'
-      response.should be_success
+    factory_book
+    
+    it "should destroy the comic book" do
+      lambda do
+        delete :destroy, :id => @comic_book
+      end.should change(ComicBook, :count).by(-1)
+    end
+
+    it "should redirect to the comic books page" do
+      delete :destroy, :id => @comic_book
+      response.should redirect_to(comic_books_path)
     end
   end
 
