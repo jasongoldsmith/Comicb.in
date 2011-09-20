@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918205645) do
+ActiveRecord::Schema.define(:version => 20110920052441) do
 
   create_table "comic_books", :force => true do |t|
     t.string   "title"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20110918205645) do
     t.datetime "updated_at"
   end
 
+  create_table "contributions", :force => true do |t|
+    t.integer  "comic_book_id"
+    t.integer  "contributor_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "contributors", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -35,14 +43,9 @@ ActiveRecord::Schema.define(:version => 20110918205645) do
   end
 
   create_table "roles", :force => true do |t|
-    t.integer  "comic_book_id"
-    t.integer  "contributor_id"
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "roles", ["comic_book_id"], :name => "index_roles_on_comic_book_id"
-  add_index "roles", ["contributor_id"], :name => "index_roles_on_contributor_id"
 
 end

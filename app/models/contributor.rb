@@ -11,5 +11,7 @@
 #
 
 class Contributor < ActiveRecord::Base
-  # belongs_to :comic_book
+  has_many :contributions
+  has_many :roles, :through => :contributions
+  has_many :comic_books, :through => :contributions
 end

@@ -3,3 +3,6 @@
 <%= table_for(@comic_books) do |t|
       t.data :actions => :all
     end %>
+
+<br />
+<%= link_to "Add new comic book", new_comic_book_path %>

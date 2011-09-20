@@ -13,5 +13,10 @@ class ContributorsController < ApplicationController
 
   def destroy
   end
+  
+  def edit
+    @contributor = Contributor.find(params[:id])
+    @title = "Edit contributor"
+  end
 
 end
