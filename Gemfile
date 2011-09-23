@@ -10,7 +10,11 @@ gem 'sqlite3', '1.3.3'
 # gem 'free-image'
 gem 'devise', '1.4.5'
 gem 'will_paginate', '3.0.pre2'
-gem "tabletastic", '0.2.3'
+gem 'tabletastic', '0.2.3'
+gem 'cocoon', '1.0.12'
+gem 'jquery-rails', '1.0.14'
+gem 'formtastic', '1.2.4'
+# gem 'haml'
 
 group :development do
 	gem 'rspec-rails', '2.6.1'

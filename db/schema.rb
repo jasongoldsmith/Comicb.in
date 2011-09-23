@@ -10,18 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920052441) do
+ActiveRecord::Schema.define(:version => 20110920223121) do
 
   create_table "comic_books", :force => true do |t|
     t.string   "title"
     t.integer  "issue"
     t.integer  "volume"
     t.integer  "year"
-    t.integer  "scripter_id"
-    t.integer  "penciller_id"
-    t.integer  "inker_id"
-    t.integer  "colorist_id"
-    t.integer  "letterer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20110920052441) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "comic_book_id"
   end
 
   create_table "roles", :force => true do |t|
