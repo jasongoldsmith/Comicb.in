@@ -1,0 +1,20 @@
+<h1>All Contributors</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+	</tr>	
+	<% @contributors.each do |contrib| %>
+	<tr>
+		<td><%= contrib.first_name %> <%= contrib.last_name %></td>
+		<td><%= link_to "Show", contributor_path(contrib) %></td>
+		<td><%= link_to "Edit", edit_contributor_path(contrib) %></td>
+		<td><%= link_to "Delete", contrib, :method => :delete, :confirm => "Are you sure?",
+		                                :title => "Delete #{contrib.first_name} #{contrib.last_name}", 
+										:remote=>true, :class=>'delete_contributor' %></td>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+<%= link_to "Add new contributor", new_contributor_path %>

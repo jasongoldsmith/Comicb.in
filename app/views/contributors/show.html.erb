@@ -1,2 +1,20 @@
-<h1>Contributors#show</h1>
-<p>Find me in app/views/contributors/show.html.erb</p>
+<h1>Contributor</h1>
+
+<h2><%= "#{@contributor.first_name} #{@contributor.last_name}" %></h2>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Issue</th>
+	</tr>
+	<% unless @comic_books.empty? %>
+	<tr>
+		<%= render @comic_books %>
+	</tr>
+	<% end %>
+
+</table>
+
+<%= link_to "Edit contributor", edit_contributor_path(@cocontributor) %>
+<br />
+<%= link_to "<<Back to list of contributors", contributors_path %>

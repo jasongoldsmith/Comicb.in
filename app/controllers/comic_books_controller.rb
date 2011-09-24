@@ -35,7 +35,12 @@ class ComicBooksController < ApplicationController
   def destroy
     ComicBook.find(params[:id]).destroy
     flash[:success] = "Comic book deleted from database."
-    redirect_to comic_books_path
+     
+    respond_to do |format|  
+      format.html { redirect_to(comic_books_path) }  
+      format.js   { render :nothing => true }
+    end
+
   end
 
   def index

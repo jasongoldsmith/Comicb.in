@@ -16,17 +16,8 @@
 		<%= comic_book.input :volume %>
 		<%= comic_book.input :year %>
 
-		<h3>Contributors</h3>
-		<div id='contributors'>
-			<% comic_book.semantic_fields_for :contributors do |f| %>
-				<%=  render 'contributor_fields', :f => f %>
-			<% end %>
-			<div class='links'>
-				<%= link_to_add_association "add contributor", comic_book, :contributors %>
-			</div>
 		<% comic_book.buttons do %>
 			<%= comic_book.submit "Save" %>
 		<% end %>
-		</div>
 	<% end %>
 <% end %>
