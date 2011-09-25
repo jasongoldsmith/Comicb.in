@@ -17,6 +17,6 @@ class Contributor < ActiveRecord::Base
   has_many :roles, :through => :contributions
   has_many :comic_books, :through => :contributions
   
-#  accepts_nested_attributes_for :contributions
+  accepts_nested_attributes_for :contributions, :allow_destroy => true, :reject_if => proc {|a| a[:role_id] < '1' || a[:comic_book_id] < '1' }
 #  accepts_nested_attributes_for :roles
 end

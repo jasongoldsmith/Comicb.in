@@ -1,7 +1,16 @@
 <h1>Edit contributor information</h1>
 
-<%= form_for(@contributor) do |f| %>
+<% semantic_form_for @contributor do |f| %>
 	<%= render 'fields', :f => f %>
+	<h2>Contributions</h2>
+	<% f.semantic_fields_for :contributions do |builder| %>
+		<%= render 'contribution', :f => builder %>
+	<% end %>
+
+	<div ="link">
+		<%= add_child_link "Add Contribution", :contributions %>
+	</div>
+		<%= new_child_fields_template(f, :contributions) %>
 	<div class="actions">
 		<%= f.submit "Update" %>
 	</div>

@@ -1,13 +1,15 @@
+<% contributor.roles.each do |role| %>
 <tr>
-	<% contributor.roles.each do |role| %>
-  <td class="role"><%= role.role %></td>
+	<td class="role"><%= role.role %></td>
 	<td class="contributor"><%= "#{contributor.first_name} #{contributor.last_name}" %></td>
-  <% if false %>
-  <td>
-    <%= link_to "delete", contributor, :method => :delete,
-                                     :confirm => "You sure?",
-                                     :title => role.role %>
-  </td>
-  <% end 
-end %>
 </tr>
+
+	<% if false %>
+	
+	<td>
+	<%= link_to "delete", contributor, :method => :delete,
+	                                 :confirm => "You sure?",
+	                                 :title => role.role %>
+	</td>
+	<% end %> 
+<% end %>

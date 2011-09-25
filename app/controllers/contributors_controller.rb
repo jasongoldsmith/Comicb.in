@@ -1,11 +1,11 @@
 class ContributorsController < ApplicationController
+
   def index
     @contributors = Contributor.find(:all)
   end
   
   def show
     @contributor = Contributor.find(params[:id])
-    @comic_books = @contributor.comic_books
     @title = "#{@contributor.first_name} #{@contributor.last_name}"
   end
 

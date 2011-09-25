@@ -7,14 +7,12 @@
 		<th>Title</th>
 		<th>Issue</th>
 	</tr>
-	<% unless @comic_books.empty? %>
-	<tr>
-		<%= render @comic_books %>
-	</tr>
+	<% unless @contributor.comic_books.empty? %>
+		<%= render @contributor.comic_books %>
 	<% end %>
 
 </table>
 
-<%= link_to "Edit contributor", edit_contributor_path(@cocontributor) %>
+<%= link_to "Edit contributor", edit_contributor_path(@contributor) %>
 <br />
 <%= link_to "<<Back to list of contributors", contributors_path %>

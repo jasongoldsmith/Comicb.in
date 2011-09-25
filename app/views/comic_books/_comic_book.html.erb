@@ -1,4 +1,9 @@
-
+<tr>
 	<td class="title"><%= comic_book.title %></td>
 	<td class="issue"><%= comic_book.issue %></td>
-
+	<td class="role">
+		<% comic_book.contributions.where(:contributor_id => @contributor.id).each do |contributor| %>
+			<%= contributor.role.role %>
+		<% end %>	
+	</td>
+</tr>

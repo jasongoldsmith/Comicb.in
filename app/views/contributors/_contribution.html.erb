@@ -1,0 +1,6 @@
+<%= render 'shared/error_messages', :object => f.object %>
+<div class="fields">
+	<%= f.input :comic_book_id, :as => :select, :collection => ComicBook.all, :label_method => :identifier %>
+	<%= f.input :role_id, :as => :select, :collection => Role.all, :label_method => :role%>
+	<%= remove_child_link "remove", f %>
+</div>
