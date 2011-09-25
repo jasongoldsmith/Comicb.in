@@ -37,7 +37,7 @@ describe ComicBook do
     comicbook.should_not be_valid
   end
   
-  it "should an issue number" do
+  it "should have an issue number" do
     comicbook = ComicBook.new(@attr.merge(:issue => nil))
     comicbook.should_not be_valid
   end

@@ -35,5 +35,10 @@ RSpec.configure do |config|
    #   @contributor = Factory(:contributor)
     end
   end  
-    
+  
+  def factory_contributor
+    before(:each) do
+      @contributor = Factory(:contributor)
+    end
+  end  
 end

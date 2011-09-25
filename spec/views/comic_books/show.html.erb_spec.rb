@@ -5,6 +5,10 @@ describe "comic_books/show.html.erb" do
   context "with a comic book"do
     before(:each) do
       assign(:comic_book, stub_model(ComicBook, :title => "Hulk", :issue => 5))
+      assign(:contributors, [
+            stub_model(Contributor, :first_name => "Bob", :last_name => "Jones"),
+            stub_model(Contributor, :first_name => "John", :last_name => "Smith")
+          ])
       render
     end
   

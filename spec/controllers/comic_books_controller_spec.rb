@@ -109,7 +109,7 @@ describe ComicBooksController do
       end
 
       it "should redirect to the comic_book show page" do
-        put :update, :id => @comic_book, :user => @attr
+        put :update, :id => @comic_book
         response.should redirect_to(comic_book_path(@comic_book))
       end
 

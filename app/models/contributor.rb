@@ -11,10 +11,12 @@
 #
 
 class Contributor < ActiveRecord::Base
+  validates :first_name, :presence => true
+  
   has_many :contributions
   has_many :roles, :through => :contributions
   has_many :comic_books, :through => :contributions
   
-  accepts_nested_attributes_for :contributions
-  accepts_nested_attributes_for :roles
+#  accepts_nested_attributes_for :contributions
+#  accepts_nested_attributes_for :roles
 end

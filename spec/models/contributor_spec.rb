@@ -13,5 +13,21 @@
 require 'spec_helper'
 
 describe Contributor do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @attr = { :first_name => "John", :last_name => "Smith" }
+  end  
+
+  it "can be created" do
+   lambda do
+      contributor = Contributor.new(@attr)
+      contributor.save
+    end.should change(Contributor, :count).by(1)
+  end 
+
+  
+  it "should have a first_name" do
+    contributor = Contributor.new(@attr.merge(:first_name => ""))
+    contributor.should_not be_valid
+  end
+  
 end

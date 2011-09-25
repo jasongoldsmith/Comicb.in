@@ -22,6 +22,6 @@ class ComicBook < ActiveRecord::Base
   has_many :contributions
   has_many :contributors, :through => :contributions
   
-  accepts_nested_attributes_for :contributors
-  accepts_nested_attributes_for :contributions
+#  accepts_nested_attributes_for :contributors
+#  accepts_nested_attributes_for :contributions
 end
