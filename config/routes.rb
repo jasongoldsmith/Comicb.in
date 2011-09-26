@@ -1,4 +1,6 @@
 Comicbin::Application.routes.draw do
+  root :to => "comic_books#index"
+  
   resources :contributors
 
   resources :comic_books
