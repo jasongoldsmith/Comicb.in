@@ -42,7 +42,7 @@ class ContributorsController < ApplicationController
     Contributor.find(params[:id]).destroy
     flash[:success] = "Contributor deleted from database."
      
-    respond_with(@contributor) do |format|  
+    respond_with(@contributors, :location => contributors_url) do |format|  
       format.js   { render :nothing => true }
     end
   end

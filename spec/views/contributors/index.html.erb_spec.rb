@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe "comic_books/index.html.erb" do
-  context "with comic books"do
+describe "contributors/index.html.erb" do
+  context "with contributors"do
     before(:each) do
-      assign(:comic_books, [
-            stub_model(ComicBook, :title => "Hulk", :issue => 5),
-            stub_model(ComicBook, :title => "XMen", :issue => 5)
+      assign(:contributors, [
+            stub_model(Contributor, :first_name => "Bob", :last_name => "Jones"),
+            stub_model(Contributor, :first_name => "Bob", :last_name => "Jones")
           ])
       render
     end
-  
+
     it "should have a header" do
       rendered.should have_selector("h1")
     end

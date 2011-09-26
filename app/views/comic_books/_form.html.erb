@@ -1,4 +1,4 @@
-<% semantic_form_for @comic_book do |comic_book| %>
+<%= semantic_form_for @comic_book do |comic_book| %>
 	<% if @comic_book.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= "#{pluralize(@comic_book.errors.count, "error")} prohibited this comic book from being saved:" %></h2>
@@ -10,13 +10,13 @@
 		</div>
 	<% end %>
 
-	<% comic_book.inputs do %>
+	<%= comic_book.inputs do %>
 		<%= comic_book.input :title %>
 		<%= comic_book.input :issue %>
 		<%= comic_book.input :volume %>
 		<%= comic_book.input :year %>
 
-		<% comic_book.buttons do %>
+		<%= comic_book.buttons do %>
 			<%= comic_book.submit "Save" %>
 		<% end %>
 	<% end %>

@@ -37,7 +37,7 @@ class ComicBooksController < ApplicationController
     ComicBook.find(params[:id]).destroy
     flash[:success] = "Comic book deleted from database."
 
-     respond_with(@comic_book) do |format|  
+     respond_with(@comic_books, :location => comic_books_url) do |format|  
        format.js   { render :nothing => true }
     end
 
